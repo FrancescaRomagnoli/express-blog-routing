@@ -1,10 +1,17 @@
 const express = require("express");
 const router = express.Router();
+const postsList = require("../resources/post-list");
 
 // # index
 
 router.get("/", (req, res) => {
-  res.send("Posts list");
+  //   res.send("Posts list");
+
+  const responseObj = {
+    count: postsList.length,
+    posts: postsList,
+  };
+  res.json(responseObj);
 });
 
 // # show
