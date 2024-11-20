@@ -18,7 +18,9 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   const postId = req.params.id;
-  res.send(`Post ${postId}`);
+  //   res.send(`Post ${postId}`);
+
+  res.send(postsList[postId]);
 });
 
 // # store
@@ -47,5 +49,7 @@ router.delete("/:id", (req, res) => {
   const postId = req.params.id;
   res.send(`Deleted post ${postId}`);
 });
+
+// # export
 
 module.exports = router;
